@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Light Theme */
+/* .light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --btn-color: #4C4C4C;
+  --input-bg: #f5f5f5;
+  --input-border: #d1d1d1;
+  --input-focus: #E3E3E3;
+  --label-color: #4C4C4C;
+  --icon: url("./assets/moon50.png");
+}
+
+/* Dark Theme */
+/* .dark {
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --btn-color: #53524E;
+  --input-bg: #2d2d2d;
+  --input-border: #3a3a3a;
+  --input-focus: #53524E;
+  --label-color: #cccccc;
+  --icon: url("./assets/sun50.png");
+} */
+
+/* Light Theme */
+/* .light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --btn-color: #4C4C4C;
+  --input-bg: #f5f5f5;
+  --input-border: #d1d1d1;
+  --input-focus: #E3E3E3;
+  --label-color: #4C4C4C;
+  --icon: url("./assets/moon50.png");
+  --bookmark-icon: url("./assets/bookmark50.png");
+  --cross-icon: url("./assets/crosslight.png");
+  --dropdown-icon: url("./assets/dropdownlight.png");
+  --dropup-icon: url("./assets/dropuplight.png");
+  --app-icon: url("./assets/icon32.png");
+} */
+
+/* Dark Theme */
+/* .dark {
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --btn-color: #53524E;
+  --input-bg: #2d2d2d;
+  --input-border: #3a3a3a;
+  --input-focus: #53524E;
+  --label-color: #cccccc;
+  --icon: url("./assets/sun50.png");
+  --bookmark-icon: url("./assets/bookmark50.png");
+  --cross-icon: url("./assets/crossdark.png");
+  --dropdown-icon: url("./assets/dropdowndark.png");
+  --dropup-icon: url("./assets/dropupdark.png");
+  --app-icon: url("./assets/icon32.png");
+} */
+
+/* Light Theme */
+.light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --btn-color: #4c4c4c;
+  --input-bg: #f5f5f5;
+  --input-border: #d1d1d1;
+  --input-focus: #e3e3e3;
+  --label-color: #4c4c4c;
+  --icon: url("./assets/moon50.png"); /* Swapped */
+  --bookmark-icon: url("./assets/bookmark50.png");
+  --cross-icon: url("./assets/crossdark.png"); /* Swapped */
+  --dropdown-icon: url("./assets/dropdowndark.png"); /* Swapped */
+  --dropup-icon: url("./assets/dropupdark.png"); /* Swapped */
+  --app-icon: url("./assets/icon32.png");
+}
+
+/* Dark Theme */
+.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --btn-color: #53524e;
+  --input-bg: #2d2d2d;
+  --input-border: #3a3a3a;
+  --input-focus: #53524e;
+  --label-color: #cccccc;
+  --icon: url("./assets/sun50.png"); /* Swapped */
+  --bookmark-icon: url("./assets/bookmark50.png");
+  --cross-icon: url("./assets/crosslight.png"); /* Swapped */
+  --dropdown-icon: url("./assets/dropdownlight.png"); /* Swapped */
+  --dropup-icon: url("./assets/dropuplight.png"); /* Swapped */
+  --app-icon: url("./assets/icon32.png");
+}
+
+body {
+  width: 320px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+}
+
+.nav {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--input-border);
+}
+
+.nav div {
+  height: 22px;
+  width: 22px;
+  background-image: var(--icon);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nav div:hover {
+  transform: rotate(15deg);
+}
+
+.container {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+
+/* Input group styling - all in one line */
+.input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  height: 42px;
+  margin: 0.5rem 0;
+}
+
+.input label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--label-color);
+  white-space: nowrap;
+  padding-right: 0.3rem;
+}
+
+.input input {
+  flex: 1;
+  width: 160px;
+  height: 26px;
+  padding: 0 0.5rem;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.7rem;
+  transition: all 0.2s ease;
+}
+
+.input input:focus {
+  outline: none;
+  border-color: var(--input-focus);
+}
+
+.input button {
+  height: 26px;
+  padding: 0 0.5rem;
+  background-color: var(--btn-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.input button:active {
+  filter: brightness(0.9);
+  transform: translateY(0);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* URL List Styling */
+#urls-titles {
+  width: 100%;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title-list {
+  list-style: none;
+  width: 100%;
+  display: none;
+}
+
+.show .title-list {
+  display: block;
+}
+
+.title-list li {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  height: 36px;
+}
+
+.title-list li:hover {
+  background-color: rgba(83, 82, 78, 0.2);
+}
+
+.favicon {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.title {
+  width: 100%;
+  padding: 0.4rem;
+  border-radius: 4px;
+  flex: 1;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-color);
+  background-color: var(--input-bg);
+
+}
+
+.title-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  all: unset;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.remove {
+  background-image: var(--cross-icon);
+}
+
+.dropdown {
+  background-image: var(--dropdown-icon);
+}
+
+.remove:hover {
+  opacity: 1;
+}
+
+/* Add empty state styling */
+#title-list:empty::before {
+  content: "No saved URLs yet";
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  color: var(--label-color);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* Active item styling */
+#title-list li.active {
+  border-left: 3px solid var(--btn-color);
+}
+
+/* Custom scrollbar for when content grows */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--btn-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--input-focus);
+}
