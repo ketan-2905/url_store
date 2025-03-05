@@ -1,19 +1,27 @@
 {
-  "manifest_version": 3,
-  "name": "URL Blocker - Productivity App",
-  "version": "0.0.1",
-  "permissions": ["storage", "tabs"],
-  "background": {
+    "manifest_version": 3,
+    "name": "URL Store - Managing App",
+    "version": "0.0.1",
+    "permissions": ["storage", "tabs"],
+    "background": {
       "service_worker": "./scripts/background.js"
-  },
-  "host_permissions": ["<all_urls>"],
-  "action": {
-      "default_popup": "popup.html"
-  },
-  "content_scripts": [
+    },
+    "host_permissions": ["<all_urls>"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "./assets/storage32.png"
+    },
+    "icons": {
+      "16": "./assets/storage32.png",
+      "32": "./assets/storage32.png",
+      "48": "./assets/storage32.png",
+      "128": "./assets/storage32.png"
+    },
+    "content_scripts": [
       {
-          "matches": ["<all_urls>"],
-          "js": ["./scripts/content.js"]
+        "matches": ["<all_urls>"],
+        "js": ["./scripts/content.js"]
       }
-  ]
-}
+    ]
+  }
+  

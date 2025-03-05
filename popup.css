@@ -7,64 +7,6 @@
 }
 
 /* Light Theme */
-/* .light {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --btn-color: #4C4C4C;
-  --input-bg: #f5f5f5;
-  --input-border: #d1d1d1;
-  --input-focus: #E3E3E3;
-  --label-color: #4C4C4C;
-  --icon: url("./assets/moon50.png");
-}
-
-/* Dark Theme */
-/* .dark {
-  --bg-color: #1e1e1e;
-  --text-color: #ffffff;
-  --btn-color: #53524E;
-  --input-bg: #2d2d2d;
-  --input-border: #3a3a3a;
-  --input-focus: #53524E;
-  --label-color: #cccccc;
-  --icon: url("./assets/sun50.png");
-} */
-
-/* Light Theme */
-/* .light {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --btn-color: #4C4C4C;
-  --input-bg: #f5f5f5;
-  --input-border: #d1d1d1;
-  --input-focus: #E3E3E3;
-  --label-color: #4C4C4C;
-  --icon: url("./assets/moon50.png");
-  --bookmark-icon: url("./assets/bookmark50.png");
-  --cross-icon: url("./assets/crosslight.png");
-  --dropdown-icon: url("./assets/dropdownlight.png");
-  --dropup-icon: url("./assets/dropuplight.png");
-  --app-icon: url("./assets/icon32.png");
-} */
-
-/* Dark Theme */
-/* .dark {
-  --bg-color: #1e1e1e;
-  --text-color: #ffffff;
-  --btn-color: #53524E;
-  --input-bg: #2d2d2d;
-  --input-border: #3a3a3a;
-  --input-focus: #53524E;
-  --label-color: #cccccc;
-  --icon: url("./assets/sun50.png");
-  --bookmark-icon: url("./assets/bookmark50.png");
-  --cross-icon: url("./assets/crossdark.png");
-  --dropdown-icon: url("./assets/dropdowndark.png");
-  --dropup-icon: url("./assets/dropupdark.png");
-  --app-icon: url("./assets/icon32.png");
-} */
-
-/* Light Theme */
 .light {
   --bg-color: #ffffff;
   --text-color: #000000;
@@ -73,11 +15,11 @@
   --input-border: #d1d1d1;
   --input-focus: #e3e3e3;
   --label-color: #4c4c4c;
-  --icon: url("./assets/moon50.png"); /* Swapped */
+  --icon: url("./assets/moon50.png");
   --bookmark-icon: url("./assets/bookmark50.png");
-  --cross-icon: url("./assets/crossdark.png"); /* Swapped */
-  --dropdown-icon: url("./assets/dropdowndark.png"); /* Swapped */
-  --dropup-icon: url("./assets/dropupdark.png"); /* Swapped */
+  --cross-icon: url("./assets/crossdark.png");
+  --dropdown-icon: url("./assets/dropdowndark.png");
+  --open-icon: url("./assets/opendark.png");
   --app-icon: url("./assets/icon32.png");
 }
 
@@ -90,11 +32,11 @@
   --input-border: #3a3a3a;
   --input-focus: #53524e;
   --label-color: #cccccc;
-  --icon: url("./assets/sun50.png"); /* Swapped */
+  --icon: url("./assets/sun50.png");
   --bookmark-icon: url("./assets/bookmark50.png");
-  --cross-icon: url("./assets/crosslight.png"); /* Swapped */
-  --dropdown-icon: url("./assets/dropdownlight.png"); /* Swapped */
-  --dropup-icon: url("./assets/dropuplight.png"); /* Swapped */
+  --cross-icon: url("./assets/crosslight.png");
+  --dropdown-icon: url("./assets/dropdownlight.png");
+  --open-icon: url("./assets/openlight.png");
   --app-icon: url("./assets/icon32.png");
 }
 
@@ -115,7 +57,14 @@ body {
   border-bottom: 1px solid var(--input-border);
 }
 
-.nav div {
+.nav .icon{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 4px;
+}
+
+.nav .theme {
   height: 22px;
   width: 22px;
   background-image: var(--icon);
@@ -125,7 +74,7 @@ body {
   transition: transform 0.2s ease;
 }
 
-.nav div:hover {
+.nav .theme:hover {
   transform: rotate(15deg);
 }
 
@@ -219,22 +168,48 @@ body {
   display: none;
 }
 
+@keyframes showList{
+  0%{
+    height: 0%;
+  }
+  100%{
+    height: 100%;
+  }
+}
+
 .show .title-list {
   display: block;
+  animation: showList 200 ease-in-out forwards;
 }
 
 .title-list li {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
   border-radius: 4px;
   transition: background-color 0.2s ease;
   height: 36px;
+  cursor: pointer;
 }
 
 .title-list li:hover {
   background-color: rgba(83, 82, 78, 0.2);
+}
+.titlefav{
+  width: 80%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 4px;
+}
+
+.favtitlediv {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .favicon {
@@ -245,6 +220,14 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   flex-shrink: 0;
+}
+
+.favicons{
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap : 6px;
 }
 
 .title {
@@ -258,7 +241,6 @@ body {
   text-overflow: ellipsis;
   color: var(--text-color);
   background-color: var(--input-bg);
-
 }
 
 .title-name {
@@ -281,12 +263,17 @@ body {
   flex-shrink: 0;
 }
 
-.remove {
-  background-image: var(--cross-icon);
-}
-
 .dropdown {
   background-image: var(--dropdown-icon);
+  animation: all 200ms ease-in;
+}
+
+.open {
+  background-image: var(--open-icon);
+}
+
+.remove {
+  background-image: var(--cross-icon);
 }
 
 .remove:hover {
